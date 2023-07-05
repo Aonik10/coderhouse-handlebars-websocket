@@ -1,14 +1,14 @@
-# 1.- Primer entregable trabajo final
+# Ejercicios handlebars y websockets
 
-Resolución del primer entregable del trabajo final del curso de backend comisión 43370
+Resolución del entregable utilizando handlebars y websockets
 
 ## Instalación
 
 Comando de instalación del ejercicio
 
 ```bash
-git clone https://github.com/Aonik10/1-coderhouse-backend-final.git
-cd "1-coderhouse-backend-final"
+git clone https://github.com/Aonik10/coderhouse-handlebars-websocket.git
+cd "coderhouse-handlebars-websocket"
 npm install
 npm run dev
 ```
