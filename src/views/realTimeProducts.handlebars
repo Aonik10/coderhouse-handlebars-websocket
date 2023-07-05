@@ -1,0 +1,61 @@
+<div class="d-flex flex-column justify-content-center p-5">
+    <div class="d-flex justify-content-center">
+        <div class="w-25 me-5">
+            <h1 class=" text-center ">Create product (WS server)</h1>
+            <p>Al crear un nuevo producto se envia al servidor ws el evento "createProduct" el cual response agregando un nuevo producto a la base de datos y emitiendo la nueva
+                lista de productos hacia el cliente, el cual vuelve a renderizar el codigo html de la tabla.
+            </p>
+            <form id="form">
+                <div>
+                    {{#each keys}}
+                        {{> inputForm content=this}}
+                    {{/each}}
+                </div>
+                <input class="btn btn-secondary w-100 mt-2" type="submit" value="Create Product"></input>
+            </form>
+        </div>
+        <div class="w-75">
+            <h1 class=" text-center ">List of products (WS server)</h1>
+            <table class="table table-striped table-hover table-sm">
+                <thead>
+                    <tr>
+                        <th scope="col">id</th>
+                        {{#each keys}}
+                            <th scope="col">{{this}}</th>
+                        {{/each}}
+                    </tr>
+                </thead>
+                <tbody id="products-data">
+                {{#each products}}
+                    <tr>
+                        <td class="p-0">
+                            {{id}}
+                        </td>                   
+                        <td class="p-0">
+                            {{title}}
+                        </td>
+                        <td class="p-0">
+                            {{description}}
+                        </td>
+                        <td class="p-0">
+                            {{code}}
+                        </td>
+                        <td class="p-0">
+                            {{price}}
+                        </td>
+                        <td class="p-0">
+                            {{category}}
+                        </td>
+                        <td class="p-0">
+                            {{thumbnails.length}}
+                        </td>
+                    </tr>
+                {{/each}}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<script src="/socket.io/socket.io.js"></script>
+<script src="index.js"></script>
